@@ -2,9 +2,12 @@
   µHacks Bot
 </h1>
 
+<p align="center">
+  <img alt="logo bg-white" src="https://user-images.githubusercontent.com/46727048/131704032-dfa26b09-9696-42bf-8984-547c2b4f3257.png" width="50%" />
+</p>
+
 ## What is µHacks Bot?
 Bot for µHacks (a. k. a. MicroHacks) hackathon, which will be held between October 29 and October 31.
 
-<p align="center">
-  <a href="https://discord.gg/GaPHHqANYq"><img alt="Discord Sever Badge" src="https://img.shields.io/badge/MicroHacks-informational?style=for-the-badge&labelColor=black&logoColor=7289da&logo=discord&color=7289da"></a>
-</p>
+## Useful links
+- [Discord Server](https://discord.gg/GaPHHqANYq)
