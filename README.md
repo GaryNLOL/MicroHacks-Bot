@@ -17,5 +17,8 @@
 ## What is µHacks Bot?
 Bot for µHacks (a. k. a. MicroHacks) hackathon, which will be held between October 29 and October 31.
 
+### Dependencies
+- Discord.py
+
 ## Useful links
 - [Discord Server](https://discord.gg/GaPHHqANYq)
