@@ -40,7 +40,7 @@ async def role_from_code(ctx, *args):
             await member.add_roles(role)
             await ctx.send(f"Assigned role to {ctx.author}.")
         else:
-            await ctx.send("code not found.")
+            await ctx.send("Code not found.")
 
 @commands.command(brief="Shows this command.")
 async def help(ctx):
