@@ -1,5 +1,8 @@
 # Discord token
 token.txt
 
+# Private settings
+bot_settings.py
+
 # Python
 __pycache__/
