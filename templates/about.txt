@@ -1,0 +1,3 @@
+Created by **Gary Hilares**.
+Licensed under **MIT License**.
+Contact: **dev.garynlol@gmail.com**.
