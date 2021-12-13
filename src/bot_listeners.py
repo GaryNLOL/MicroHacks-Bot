@@ -5,7 +5,7 @@ async def on_ready(client):
     logging.getLogger('BotEvents').debug(f"Logged in successfully as {client.user}!")
 
 async def on_message(client,message):
-    content = message.content if message.content else "(Not printable)."
+    content = message.content if message.content else "(Not printable)"
     logging.getLogger('BotEvents').debug(f"Message from {message.author}: {content}.")
 
 async def on_member_join(client,member):

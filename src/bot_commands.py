@@ -1,18 +1,18 @@
 from discord.ext import commands
 from discord.utils import get
-from utils import render_template, create_embed
+from utils import create_embed
 from bot_settings import assignable_roles, role_codes, server_id
 
 @commands.command(brief="Get your ping.")
 async def ping(ctx):
     ping_in_ms = round(ctx.bot.latency,1)
-    ping_content = render_template('ping.txt',ping_in_ms=ping_in_ms)
+    ping_content = f"Your ping is {ping_in_ms} ms."
     embed = create_embed(title="Ping",fields=[{'name': "Your ping",'value': ping_content}])
     await ctx.channel.send(embed=embed)
 
 @commands.command(brief="Get bot information.")
 async def about(ctx):
-    about_content = render_template('about.txt')
+    about_content = "Created by **Gary Hilares**.\nLicensed under **MIT License**.\nContact: **dev.garynlol@gmail.com**."
     embed = create_embed(title="About",fields=[{'name': "Bot information", 'value': about_content}])
     await ctx.channel.send(embed=embed)
 
@@ -42,10 +42,13 @@ async def role_from_code(ctx, *args):
         else:
             await ctx.send("Code not found.")
 
-@commands.command(brief="Shows this command.")
+@commands.command(brief="Shows this message.")
 async def help(ctx):
     embed = create_embed(title="Help",fields=[])
-    commands = ctx.bot.commands
-    for command in commands:
-        embed.add_field(name=command.name,value=command.brief,inline=False)
+    commands = ctx.bot.commands.copy()
+    commands_sorted_alphabetically = sorted(commands, key=lambda x: x.name,reverse=False)
+    commands_sorted_by_length_followed_by_alphabetically = sorted(commands_sorted_alphabetically, key=lambda x: len(x.name))
+    command_strings = [f"**{command.name}:** {command.brief}" for command in commands_sorted_by_length_followed_by_alphabetically]
+    help_content = '\n'.join(command_strings)
+    embed.add_field(name="Commands",value=help_content,inline=False)
     await ctx.channel.send(embed=embed)

@@ -1,1 +1,0 @@
-Your ping is {ping_in_ms} ms.
