@@ -42,3 +42,10 @@ async def role_from_code(ctx, *args):
         else:
             await ctx.send("code not found.")
 
+@commands.command(brief="Shows this command.")
+async def help(ctx):
+    embed = create_embed(title="Help",fields=[])
+    commands = ctx.bot.commands
+    for command in commands:
+        embed.add_field(name=command.name,value=command.brief,inline=False)
+    await ctx.channel.send(embed=embed)
