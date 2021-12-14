@@ -1,4 +1,5 @@
-from bot_settings import welcome_channel_id, default_role
+from bot_settings import welcome_channel_id, default_role, server_id
+from discord.utils import get
 import logging
 
 async def on_ready(client):
@@ -10,5 +11,7 @@ async def on_message(client,message):
 
 async def on_member_join(client,member):
     if default_role:
-        await member.add_roles(default_role)
-    await client.get_channel(welcome_channel_id).send(f"{member.name} has joined.")
+        server = client.get_guild(server_id)
+        role = get(server.roles,name=default_role)
+        await member.add_roles(role)
+    await client.get_channel(welcome_channel_id).send(f"{member.name} has joined!")
